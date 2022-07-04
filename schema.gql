@@ -1,0 +1,35 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Bet {
+  betAmount: Float!
+  chance: Float!
+  payout: Float!
+  win: Boolean!
+  user: User!
+}
+
+type User {
+  name: String!
+  balance: Float!
+  bets: [Bet!]!
+}
+
+type Query {
+  userList: [User!]!
+  user(id: Int!): User!
+  betList: [Bet!]!
+  bet(id: Int!): Bet!
+  bestBetPerUser(limit: Int!): [Bet!]!
+}
+
+type Mutation {
+  createBet(createBetInput: CreateBetInput!): Bet!
+}
+
+input CreateBetInput {
+  userId: Int!
+  betAmount: Float!
+  chance: Float!
+}

@@ -1,8 +1,8 @@
-import { User } from './models/user.model';
+import { Bet } from './models/bet.model';
 
-export const usersProviders = [
+export const betProviders = [
   {
-    provide: 'USER_REPOSITORY',
-    useValue: User,
+    provide: 'BET_REPOSITORY',
+    useValue: Bet,
   },
 ];
