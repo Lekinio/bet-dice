@@ -1,4 +1,4 @@
-import { ObjectType, Field, Int, Float } from '@nestjs/graphql';
+import { ObjectType, Field, Float } from '@nestjs/graphql';
 import { Bet } from '../../bet/entities/bet.entity';
 
 @ObjectType()
@@ -9,6 +9,6 @@ export class User {
   @Field(() => Float)
   balance: number;
 
-  @Field((type) => [Bet])
+  @Field(() => [Bet])
   bets: Bet[];
 }

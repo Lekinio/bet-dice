@@ -1,8 +1,8 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { Bet } from './models/bet.model';
 import { User } from '../user/models/user.model';
-import sequelize from 'sequelize';
 import { Sequelize } from 'sequelize-typescript';
+
 
 @Injectable()
 export class BetService {
@@ -10,8 +10,8 @@ export class BetService {
     @Inject('BET_REPOSITORY') private readonly betRepository: typeof Bet,
   ) {}
 
-  createBet(createBetInput: any) {
-    return this.betRepository.create(createBetInput);
+  createBet(createBetInput): Promise<Bet> {
+    return this.betRepository.create<Bet>(createBetInput);
   }
 
   getBetList(): Promise<Bet[]> {

@@ -1,4 +1,4 @@
-import { InputType, Int, Field, Float } from "@nestjs/graphql";
+import { InputType, Int, Field, Float } from '@nestjs/graphql';
 
 @InputType()
 export class CreateBetInput {
@@ -11,3 +11,4 @@ export class CreateBetInput {
   @Field(() => Float)
   chance: number;
 }
+
